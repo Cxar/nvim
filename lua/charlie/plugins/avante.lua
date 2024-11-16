@@ -5,7 +5,7 @@ return {
 		lazy = false,
 		version = false,
 		opts = {
-			provider = "ollama",
+			provider = "claude",
 			vendors = {
 				---@type AvanteProvider
 				ollama = {
@@ -21,14 +21,14 @@ return {
 							},
 							body = {
 								model = opts.model,
-								messages = require("avante.providers").copilot.parse_messages(code_opts), -- you can make your own message, but this is very advanced
-								max_tokens = 32768,
+								messages = require("avante.providers").openai.parse_messages(code_opts), -- you can make your own message, but this is very advanced
+								max_tokens = 327680,
 								stream = true,
 							},
 						}
 					end,
 					parse_response_data = function(data_stream, event_state, opts)
-						require("avante.providers").copilot.parse_response(data_stream, event_state, opts)
+						require("avante.providers").openai.parse_response(data_stream, event_state, opts)
 					end,
 				},
 			},
