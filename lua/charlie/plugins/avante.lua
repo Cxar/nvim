@@ -5,13 +5,13 @@ return {
 		lazy = false,
 		version = false,
 		opts = {
-			provider = "ollama",
+			provider = "claude",
 			vendors = {
 				---@type AvanteProvider
 				ollama = {
 					["local"] = true,
 					endpoint = "127.0.0.1:11434/v1",
-					model = "qwen2.5-coder:14b-instruct-q4_K_M",
+					model = "qwen2.5-coder:32b-instruct-q4_K_M",
 					parse_curl_args = function(opts, code_opts)
 						return {
 							url = opts.endpoint .. "/chat/completions",
