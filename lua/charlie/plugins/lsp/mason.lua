@@ -48,9 +48,9 @@ return {
 				"black", -- python formatter
 				"pylint",
 				"eslint_d",
-				"goimports",
 				"gofumpt",
 				"golangci-lint",
+				"goimports-reviser",
 			},
 		})
 	end,

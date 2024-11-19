@@ -20,7 +20,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				go = { "gofumpt", "gopls" },
+				go = { "gofumpt", "goimports-reviser" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

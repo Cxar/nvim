@@ -5,13 +5,13 @@ return {
 		lazy = false,
 		version = false,
 		opts = {
-			provider = "claude",
+			provider = "ollama",
 			vendors = {
 				---@type AvanteProvider
 				ollama = {
 					["local"] = true,
 					endpoint = "127.0.0.1:11434/v1",
-					model = "qwen2.5-coder:32b-instruct-q4_K_M",
+					model = "qwen2.5-coder-7b-max-context:latest",
 					parse_curl_args = function(opts, code_opts)
 						return {
 							url = opts.endpoint .. "/chat/completions",
@@ -22,7 +22,7 @@ return {
 							body = {
 								model = opts.model,
 								messages = require("avante.providers").openai.parse_messages(code_opts), -- you can make your own message, but this is very advanced
-								max_tokens = 327680,
+								max_tokens = 32768,
 								stream = true,
 							},
 						}
