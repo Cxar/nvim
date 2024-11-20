@@ -9,6 +9,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			sections = {
+				lualine_c = { { "filename", path = 1 } },
 				lualine_x = {
 					{
 						lazy_status.updates,
